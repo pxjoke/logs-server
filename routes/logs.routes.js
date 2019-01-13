@@ -8,20 +8,6 @@ module.exports = function (app) {
     app.route('/add-log')
         .post(usersController.checkUser, controller.addLog)
 
-
-    // app.route('/wallets/:walletName/new-transaction')
-    //     .get(usersController.checkUser, transactionsController.newTransactionPage)
-    //     .post(usersController.checkUser, transactionsController.create);
-
-    // app.route('/new-wallet')
-    //     .get(usersController.checkUser, walletsController.newWalletPage)
-    //     .post(usersController.checkUser, walletsController.create);
-
-    // app.route('/wallets/:walletName')
-    //     .get(usersController.checkUser, walletsController.walletPage);
-
-    // app.route('/wallets/:walletName/delete')
-    //     .get(usersController.checkUser, walletsController.delete);
-
-
+    app.route('/logs/:id/delete')
+        .get(usersController.checkUser, controller.delete);
 };

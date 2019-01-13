@@ -3,16 +3,21 @@ extends layout
 block content
     .row
         .col-12
-            form(action='/add-log', method='POST')
-                .form-group
-                    input.form-control(name="text" type='text' placeholder='Log something')
-                    button.btn.btn-info(type='submit') Log
+            .pt-4.pl-3
+                form(action='/add-log', method='POST')
+                    .row
+                        .col-11
+                            input.form-control.large(name="text" type='text' placeholder='Log something...')
+                        .col-1
+                            button.btn.btn-info(type='submit') Log
+    hr    
     .row
-        .col-6
+        .col-12
             each log in logs
                 .card.mb-4
-                    .card-block
-                        h3.card-title #{log.text}
-                        div #{log.date}
+                    .card-body 
+                        .card-title #{log.dateFormated}
+                        .card-text.mb-2 #{log.text} 
+                        a.card-link(href="/logs/" + log._id + "/delete") Delete
 
 

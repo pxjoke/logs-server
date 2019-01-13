@@ -2,9 +2,9 @@ exports.index = (req, res) => {
     const user = req.session.user;
     console.log(req.session.user);
     if (user) {
-        res.redirect('/wallets');
+        res.redirect('/logs');
         return;
     }
 
-    res.render('index', {title: 'Welcome Page'});
+    res.redirect('/register');
 };

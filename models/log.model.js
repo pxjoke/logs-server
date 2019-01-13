@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const moment = require('moment');
 
 const schema = new Schema({
     text: {
         type: String,
-        required: true,
-        unique: true
+        required: true
     },
     date: {
         type: Date,
@@ -15,5 +15,6 @@ const schema = new Schema({
         type: mongoose.Schema.Types.ObjectId, ref: 'User',
     }
 });
+
 
 exports.logModel = mongoose.model('Log', schema);

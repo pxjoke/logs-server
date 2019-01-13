@@ -13,8 +13,7 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true
-    },
-    wallets: [{type: mongoose.Schema.Types.ObjectId, ref: 'Wallet'}]
+    }
 });
 
 module.exports = mongoose.model('User', userSchema);

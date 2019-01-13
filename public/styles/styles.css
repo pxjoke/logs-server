@@ -10,6 +10,9 @@ body {
     margin-right: 3.5em;
 }
 
+/* hr {
+    border-bottom: 2px solid #666;
+} */
 /*!* Everything but the jumbotron gets side spacing for mobile first views *!*/
 /*.header,*/
 /*.marketing,*/
