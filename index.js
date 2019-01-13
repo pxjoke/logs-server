@@ -8,9 +8,8 @@ const MongoStore = require('connect-mongo')(session);
 const port = process.env.PORT || 3000;
 const app = express();
 const dbConfig = require('./config/db');
-const wallet = require('./models/wallet.model');
-const transaction = require('./models/transaction.model');
 const user = require('./models/user.model');
+const log = require('./models/log.model');
 
 const db = mongoose
     .connect(dbConfig.url);
@@ -31,7 +30,7 @@ app.use(session({
     saveUninitialized: true
 }));
 
-require('./routes/wallets.routes')(app);
+require('./routes/logs.routes')(app);
 require('./routes/users.routes')(app);
 require('./routes/index.routes')(app);
 

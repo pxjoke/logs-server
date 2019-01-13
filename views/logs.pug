@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    .row
+        .col-12
+            form(action='/add-log', method='POST')
+                .form-group
+                    input.form-control(name="text" type='text' placeholder='Log something')
+                    button.btn.btn-info(type='submit') Log
+    .row
+        .col-6
+            each log in logs
+                .card.mb-4
+                    .card-block
+                        h3.card-title #{log.text}
+                        div #{log.date}
+
+
